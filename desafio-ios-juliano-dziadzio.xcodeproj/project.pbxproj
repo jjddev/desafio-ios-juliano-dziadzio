@@ -13,6 +13,7 @@
 		167DB007243D57A2006089E1 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167DB006243D57A2006089E1 /* MainCoordinator.swift */; };
 		167DB009243D58CE006089E1 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167DB008243D58CE006089E1 /* Storyboarded.swift */; };
 		167DB00B243D5B6B006089E1 /* CharactersDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167DB00A243D5B6B006089E1 /* CharactersDetailsViewController.swift */; };
+		167DB00D243D5E1D006089E1 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167DB00C243D5E1D006089E1 /* CharacterModel.swift */; };
 		169522DC243BE6700015DB39 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169522DB243BE6700015DB39 /* Service.swift */; };
 		169522DE243BF7F20015DB39 /* String+Hashing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169522DD243BF7F20015DB39 /* String+Hashing.swift */; };
 		169522E3243C2D8C0015DB39 /* URLSession+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169522E2243C2D8C0015DB39 /* URLSession+extension.swift */; };
@@ -45,6 +46,7 @@
 		167DB006243D57A2006089E1 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		167DB008243D58CE006089E1 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		167DB00A243D5B6B006089E1 /* CharactersDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDetailsViewController.swift; sourceTree = "<group>"; };
+		167DB00C243D5E1D006089E1 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		169522DB243BE6700015DB39 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		169522DD243BF7F20015DB39 /* String+Hashing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hashing.swift"; sourceTree = "<group>"; };
 		169522E2243C2D8C0015DB39 /* URLSession+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+extension.swift"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				16CA506B243BDDCD00F3B99A /* MarvelApiResponse.swift */,
 				169522E4243C2DC20015DB39 /* Result.swift */,
 				169522E6243C35EA0015DB39 /* Token.swift */,
+				167DB00C243D5E1D006089E1 /* CharacterModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				16CA5044243BC20C00F3B99A /* AppDelegate.swift in Sources */,
 				16CA506C243BDDCD00F3B99A /* MarvelApiResponse.swift in Sources */,
 				167DB009243D58CE006089E1 /* Storyboarded.swift in Sources */,
+				167DB00D243D5E1D006089E1 /* CharacterModel.swift in Sources */,
 				169522DE243BF7F20015DB39 /* String+Hashing.swift in Sources */,
 				169522E7243C35EA0015DB39 /* Token.swift in Sources */,
 				169522E3243C2D8C0015DB39 /* URLSession+extension.swift in Sources */,
