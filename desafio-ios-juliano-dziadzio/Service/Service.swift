@@ -1,5 +1,5 @@
 import Foundation
-import CryptoKit
+import UIKit
 
 class Service {
     
@@ -13,7 +13,7 @@ class Service {
     func fetchCharacters(completionHandler: @escaping (_ result: MarvelApiResponse) -> Void) {
         
         let token = generateToken()
-        let urls = AppSettings.ApiUrl + "characters?ts=\(token.timestamp)&apikey=\(AppSettings.ApiPublicKey)&hash=\(token.value)&limit=5&offset=0"
+        let urls = AppSettings.ApiUrl + "characters?ts=\(token.timestamp)&apikey=\(AppSettings.ApiPublicKey)&hash=\(token.value)&limit=15&offset=0"
         
         let url = URL(string: urls)!
         var request = URLRequest(url: url)
@@ -32,6 +32,18 @@ class Service {
         
         task.resume()
     }
+    
+    func getImage(urlDownload: String, completionHander: @escaping (Data) -> Void) {
+        let url = URL(string: urlDownload)!
+        
+        DispatchQueue.global().sync {
+            guard let imageData = try? Data(contentsOf: url) else { return }
+            DispatchQueue.global().sync {
+                completionHander(imageData)
+            }
+        }
+    }
+    
 }
 
 
