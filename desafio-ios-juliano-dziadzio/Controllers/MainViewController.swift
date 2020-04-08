@@ -1,4 +1,9 @@
-// url, chave publica e privada no xcodeproj, como variáveis do app
+/*
+- url, chave publica e privada no xcodeproj, como variáveis do app.
+- characters um array com a response "bruta", charactersModel é o tipo mais para o app trabalhar,
+ele usa o mesmo blob para exibir a imagem tanto na listagem quanto na tela de detalhes, assim evitando uma nova request pesada.
+ */
+
 import UIKit
 
 class MainViewController: UIViewController, Storyboarded {
@@ -19,20 +24,17 @@ class MainViewController: UIViewController, Storyboarded {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         if characters.isEmpty {
             activityIndicator.startAnimating()
             Service().fetchCharacters(completionHandler: { response in
                 //print(response.data.results)
                 self.characters = response.data.results
-                
                 for item in self.characters {
-                    let url =  "\(item.thumbnail.path)/standard_medium.\(item.thumbnail.fileExtension)"
+                    let url =  "\(item.thumbnail.path)/\(ImageSize.landscapeMedium.rawValue).\(item.thumbnail.fileExtension)"
                     Service().getImage(urlDownload: url)  { downloadImage in
                         let character = item.toModel(imageBlob: downloadImage)
                         self.charactersModel.append(character)
                     }
-                    
                 }
                 
                 self.updateTableItems()
