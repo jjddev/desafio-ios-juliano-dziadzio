@@ -10,9 +10,14 @@ class CharactersDetailsViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let charcter = character {
-            self.name.text = charcter.name
-            self.shortResume.text = charcter.description
+        populateScreenFields()
+    }
+    
+    private func populateScreenFields(){
+        if let character = character {
+            self.name.text = character.name
+            self.shortResume.text = character.description
+            self.navigationItem.title = "\(character.name) details"
         }
     }
 }
