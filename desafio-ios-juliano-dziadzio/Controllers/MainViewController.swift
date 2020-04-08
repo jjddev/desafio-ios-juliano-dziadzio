@@ -9,6 +9,7 @@ class MainViewController: UIViewController, Storyboarded {
     
     let cellName = String(describing: CharacterTableViewCell.self)
     var characters = [Character]()
+    var charactersModel = [CharacterModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,13 +19,25 @@ class MainViewController: UIViewController, Storyboarded {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        activityIndicator.startAnimating()
         
-        Service().fetchCharacters(completionHandler: { response in
-            print(response.data.results)
-            self.characters = response.data.results
-            self.updateTableItems()
-        })
+        if characters.isEmpty {
+            activityIndicator.startAnimating()
+            Service().fetchCharacters(completionHandler: { response in
+                //print(response.data.results)
+                self.characters = response.data.results
+                
+                for item in self.characters {
+                    let url =  "\(item.thumbnail.path)/standard_medium.\(item.thumbnail.fileExtension)"
+                    Service().getImage(urlDownload: url)  { downloadImage in
+                        let character = item.toModel(imageBlob: downloadImage)
+                        self.charactersModel.append(character)
+                    }
+                    
+                }
+                
+                self.updateTableItems()
+            })
+        }
     }
     
     func updateTableItems() {
@@ -44,8 +57,10 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as? CharacterTableViewCell {
-            cell.name.text =  characters[indexPath.row].name
-            cell.img = UIImageView(image:  UIImage(contentsOfFile: "standard_medium"))
+            let character = charactersModel[indexPath.row]
+            cell.name.text =  character.name
+            cell.img.image = UIImage(data: character.imageBlob)
+            
             return cell
         } else {
             return UITableViewCell()
@@ -57,13 +72,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let charcter = characters[indexPath.row]
-        coordinator?.showCharacterDetails(model: charcter.toModel())
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == characters.count - 1 {
-            
-        }
+        let character = charactersModel[indexPath.row]
+        coordinator?.showCharacterDetails(model: character)
     }
 }

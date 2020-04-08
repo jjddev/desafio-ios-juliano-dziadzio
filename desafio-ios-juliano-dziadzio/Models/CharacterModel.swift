@@ -5,5 +5,5 @@ struct CharacterModel {
     let name: String
     let description: String
     let imagePath: String
-    var imageBlob: String
+    var imageBlob: Data
 }

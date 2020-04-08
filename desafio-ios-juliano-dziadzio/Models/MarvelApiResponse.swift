@@ -16,11 +16,11 @@ struct Character: Codable {
     let thumbnail: Thumbnail
     
     
-    func toModel() -> CharacterModel {
+    func toModel(imageBlob: Data = Data()) -> CharacterModel {
         let path = "\(self.thumbnail.path)/standard_medium.\(self.thumbnail.fileExtension)"
         let description = self.description.isEmpty ? "No description avaliable" : self.description
         
-        return CharacterModel(id: self.id, name: self.name, description: description, imagePath: path, imageBlob: "")
+        return CharacterModel(id: self.id, name: self.name, description: description, imagePath: path, imageBlob: imageBlob)
     }
     
 }

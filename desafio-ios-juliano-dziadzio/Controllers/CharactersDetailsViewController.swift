@@ -18,6 +18,7 @@ class CharactersDetailsViewController: UIViewController, Storyboarded {
             self.name.text = character.name
             self.shortResume.text = character.description
             self.navigationItem.title = "\(character.name) details"
+            self.img.image = UIImage(data: character.imageBlob)
         }
     }
     
