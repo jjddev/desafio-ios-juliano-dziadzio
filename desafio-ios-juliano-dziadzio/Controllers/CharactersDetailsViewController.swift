@@ -20,4 +20,12 @@ class CharactersDetailsViewController: UIViewController, Storyboarded {
             self.navigationItem.title = "\(character.name) details"
         }
     }
+    
+    private func comicDetails() {
+        coordinator?.showComicDetails()
+    }
+    
+    @IBAction func didTapComicDetails(_ sender: Any) {
+        comicDetails()
+    }
 }

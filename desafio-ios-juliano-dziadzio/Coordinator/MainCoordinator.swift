@@ -29,4 +29,10 @@ class MainCoordinator {
         viewController.character = model
         navigationController.pushViewController(viewController, animated: true)
     }
+    
+    func showComicDetails() {
+        let viewController =  ComicsDetailsViewController.instantiate()
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }
