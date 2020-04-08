@@ -14,6 +14,7 @@
 		167DB009243D58CE006089E1 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167DB008243D58CE006089E1 /* Storyboarded.swift */; };
 		167DB00B243D5B6B006089E1 /* CharactersDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167DB00A243D5B6B006089E1 /* CharactersDetailsViewController.swift */; };
 		167DB00D243D5E1D006089E1 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167DB00C243D5E1D006089E1 /* CharacterModel.swift */; };
+		167DB00F243D72D5006089E1 /* ComicsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167DB00E243D72D5006089E1 /* ComicsDetailsViewController.swift */; };
 		169522DC243BE6700015DB39 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169522DB243BE6700015DB39 /* Service.swift */; };
 		169522DE243BF7F20015DB39 /* String+Hashing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169522DD243BF7F20015DB39 /* String+Hashing.swift */; };
 		169522E3243C2D8C0015DB39 /* URLSession+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169522E2243C2D8C0015DB39 /* URLSession+extension.swift */; };
@@ -47,6 +48,7 @@
 		167DB008243D58CE006089E1 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		167DB00A243D5B6B006089E1 /* CharactersDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDetailsViewController.swift; sourceTree = "<group>"; };
 		167DB00C243D5E1D006089E1 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		167DB00E243D72D5006089E1 /* ComicsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsDetailsViewController.swift; sourceTree = "<group>"; };
 		169522DB243BE6700015DB39 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		169522DD243BF7F20015DB39 /* String+Hashing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hashing.swift"; sourceTree = "<group>"; };
 		169522E2243C2D8C0015DB39 /* URLSession+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+extension.swift"; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		169522E1243C2D770015DB39 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				167DB008243D58CE006089E1 /* Storyboarded.swift */,
 				169522DD243BF7F20015DB39 /* String+Hashing.swift */,
 				169522E2243C2D8C0015DB39 /* URLSession+extension.swift */,
 			);
@@ -154,7 +157,6 @@
 				167DB004243D4AD1006089E1 /* standard_medium.jpg */,
 				16CA504E243BC20D00F3B99A /* LaunchScreen.storyboard */,
 				16CA5051243BC20D00F3B99A /* Info.plist */,
-				167DB008243D58CE006089E1 /* Storyboarded.swift */,
 			);
 			path = "desafio-ios-juliano-dziadzio";
 			sourceTree = "<group>";
@@ -200,6 +202,7 @@
 			children = (
 				167DAFFD243D42C4006089E1 /* MainViewController.swift */,
 				167DB00A243D5B6B006089E1 /* CharactersDetailsViewController.swift */,
+				167DB00E243D72D5006089E1 /* ComicsDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				16CA5069243BDC3A00F3B99A /* AppSettings.swift in Sources */,
 				16CA5046243BC20C00F3B99A /* SceneDelegate.swift in Sources */,
 				167DB00B243D5B6B006089E1 /* CharactersDetailsViewController.swift in Sources */,
+				167DB00F243D72D5006089E1 /* ComicsDetailsViewController.swift in Sources */,
 				169522DC243BE6700015DB39 /* Service.swift in Sources */,
 				167DB003243D45FF006089E1 /* CharacterTableViewCell.swift in Sources */,
 			);
