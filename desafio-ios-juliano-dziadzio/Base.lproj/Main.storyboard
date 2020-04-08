@@ -56,18 +56,44 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qYT-oP-IEB">
+                                <rect key="frame" x="97" y="315.5" width="181" height="36"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="qkY-Uw-8iD">
+                                        <rect key="frame" x="8" y="8" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOADING..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGD-ty-hX0">
+                                        <rect key="frame" x="44" y="7.5" width="93" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="LGD-ty-hX0" firstAttribute="centerX" secondItem="qYT-oP-IEB" secondAttribute="centerX" id="Nv4-KO-Okh"/>
+                                    <constraint firstItem="LGD-ty-hX0" firstAttribute="centerY" secondItem="qYT-oP-IEB" secondAttribute="centerY" id="Rx8-Oe-JLs"/>
+                                    <constraint firstItem="qkY-Uw-8iD" firstAttribute="leading" secondItem="qYT-oP-IEB" secondAttribute="leading" constant="8" id="ZrI-Ug-qtQ"/>
+                                    <constraint firstItem="LGD-ty-hX0" firstAttribute="leading" secondItem="qkY-Uw-8iD" secondAttribute="trailing" constant="16" id="cLW-PV-MFy"/>
+                                    <constraint firstAttribute="bottom" secondItem="qkY-Uw-8iD" secondAttribute="bottom" constant="8" id="lEc-31-zaS"/>
+                                    <constraint firstItem="qkY-Uw-8iD" firstAttribute="top" secondItem="qYT-oP-IEB" secondAttribute="top" constant="8" id="oOp-Gs-x3b"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="qYT-oP-IEB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8Ra-xl-djb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rly-AI-aqL" secondAttribute="bottom" id="HuX-kv-YF3"/>
                             <constraint firstItem="rly-AI-aqL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NgG-UJ-HtA"/>
                             <constraint firstItem="rly-AI-aqL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PUk-af-3MZ"/>
+                            <constraint firstItem="qYT-oP-IEB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RaV-5C-Aw9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rly-AI-aqL" secondAttribute="trailing" id="aqD-ya-7Fs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="PUG-Kj-unN"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="qkY-Uw-8iD" id="Z4B-sU-Ygx"/>
+                        <outlet property="loadingView" destination="qYT-oP-IEB" id="l2y-iu-ojk"/>
                         <outlet property="tableView" destination="rly-AI-aqL" id="aIq-ET-hvB"/>
                     </connections>
                 </viewController>
@@ -95,12 +121,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dh3-6u-xvx">
                                 <rect key="frame" x="153.5" y="180" width="68.5" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cg6-1Y-hxF">
                                 <rect key="frame" x="87.5" y="592" width="200" height="45"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="U52-A8-LOe"/>
                                     <constraint firstAttribute="width" constant="200" id="mpq-KI-nNQ"/>

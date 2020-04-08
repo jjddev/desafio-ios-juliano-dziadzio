@@ -4,6 +4,9 @@ import UIKit
 class MainViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     let cellName = String(describing: CharacterTableViewCell.self)
     var characters = [Character]()
     
@@ -15,6 +18,8 @@ class MainViewController: UIViewController, Storyboarded {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        activityIndicator.startAnimating()
+        
         Service().fetchCharacters(completionHandler: { response in
             print(response.data.results)
             self.characters = response.data.results
@@ -25,6 +30,7 @@ class MainViewController: UIViewController, Storyboarded {
     func updateTableItems() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.loadingView.isHidden = true
         }
     }
 }
@@ -53,5 +59,11 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let charcter = characters[indexPath.row]
         coordinator?.showCharacterDetails(model: charcter.toModel())
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == characters.count - 1 {
+            
+        }
     }
 }
