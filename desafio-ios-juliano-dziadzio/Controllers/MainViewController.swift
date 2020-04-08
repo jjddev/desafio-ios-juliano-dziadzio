@@ -50,6 +50,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        coordinator?.showCharacterDetails()
+        let charcter = characters[indexPath.row]
+        coordinator?.showCharacterDetails(model: charcter.toModel())
     }
 }

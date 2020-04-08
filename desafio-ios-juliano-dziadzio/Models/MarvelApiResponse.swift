@@ -18,7 +18,9 @@ struct Character: Codable {
     
     func toModel() -> CharacterModel {
         let path = "\(self.thumbnail.path)/standard_medium.\(self.thumbnail.fileExtension)"
-        return CharacterModel(id: self.id, name: self.name, description: self.description, imagePath: path, imageBlob: "")
+        let description = self.description.isEmpty ? "No description avaliable" : self.description
+        
+        return CharacterModel(id: self.id, name: self.name, description: description, imagePath: path, imageBlob: "")
     }
     
 }

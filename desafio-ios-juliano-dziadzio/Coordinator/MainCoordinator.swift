@@ -23,9 +23,10 @@ class MainCoordinator {
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    func showCharacterDetails() {
+    func showCharacterDetails(model: CharacterModel) {
         let viewController = CharactersDetailsViewController.instantiate()
         viewController.coordinator = self
+        viewController.character = model
         navigationController.pushViewController(viewController, animated: true)
     }
 }
