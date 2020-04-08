@@ -10,7 +10,8 @@ class MainViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
-        tableView.dataSource = self        
+        tableView.dataSource = self
+        self.navigationItem.title = "Marvel characters list"
     }
     
     override func viewWillAppear(_ animated: Bool) {
