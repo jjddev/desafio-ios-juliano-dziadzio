@@ -1,12 +1,18 @@
 import Foundation
 
 struct ComicResponse: Codable {
-    var data: InnerData
+    public var data: InnerData
     
     struct InnerData: Codable {
-        let results: [Comic]
-        let total: Int
+        public var results: [Comic]
+        public var total: Int
     }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        data = try container.decode(ComicResponse.InnerData.self, forKey: .data)
+
+     }
 }
 
 struct Comic: Codable {
