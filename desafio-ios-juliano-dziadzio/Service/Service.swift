@@ -10,7 +10,7 @@ class Service {
         return Token(value: token, timestamp: timestamp)
     }
     
-    func fetchCharacters(completionHandler: @escaping (_ result: MarvelApiResponse) -> Void) {
+    func fetchCharacters(completionHandler: @escaping (_ result: CharacterResponse) -> Void) {
         
         let token = generateToken()
         let urls = AppSettings.ApiUrl + "characters?ts=\(token.timestamp)&apikey=\(AppSettings.ApiPublicKey)&hash=\(token.value)&limit=15&offset=0"
@@ -22,7 +22,7 @@ class Service {
         let task = URLSession.shared.dataTask(with: url) { result in
             switch result {
                 case .success(let data):
-                    let json = try! JSONDecoder().decode(MarvelApiResponse.self, from: data)
+                    let json = try! JSONDecoder().decode(CharacterResponse.self, from: data)
                     completionHandler(json)
                 case .failure(let error):
                     NSLog(error.localizedDescription)
@@ -34,7 +34,6 @@ class Service {
     }
     
     func fetchComics(characterId: Int, completionHandler: @escaping (_ result: ComicResponse) -> Void) {
-        
         let token = generateToken()
         let urls = AppSettings.ApiUrl + "characters/\(characterId)/comics?ts=\(token.timestamp)&apikey=\(AppSettings.ApiPublicKey)&hash=\(token.value)"
         

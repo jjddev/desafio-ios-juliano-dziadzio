@@ -30,7 +30,7 @@
 		16CA5050243BC20D00F3B99A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16CA504E243BC20D00F3B99A /* LaunchScreen.storyboard */; };
 		16CA505B243BC20D00F3B99A /* desafio_ios_juliano_dziadzioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CA505A243BC20D00F3B99A /* desafio_ios_juliano_dziadzioTests.swift */; };
 		16CA5069243BDC3A00F3B99A /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CA5068243BDC3A00F3B99A /* AppSettings.swift */; };
-		16CA506C243BDDCD00F3B99A /* MarvelApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CA506B243BDDCD00F3B99A /* MarvelApiResponse.swift */; };
+		16CA506C243BDDCD00F3B99A /* CharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CA506B243BDDCD00F3B99A /* CharacterResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +71,7 @@
 		16CA505A243BC20D00F3B99A /* desafio_ios_juliano_dziadzioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafio_ios_juliano_dziadzioTests.swift; sourceTree = "<group>"; };
 		16CA505C243BC20D00F3B99A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16CA5068243BDC3A00F3B99A /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
-		16CA506B243BDDCD00F3B99A /* MarvelApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApiResponse.swift; sourceTree = "<group>"; };
+		16CA506B243BDDCD00F3B99A /* CharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +92,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		167D32DB243EAD770083AEF6 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				16CA506B243BDDCD00F3B99A /* CharacterResponse.swift */,
+				167D32D7243EA3950083AEF6 /* ComicResponse.swift */,
+				167D32D9243EA7C50083AEF6 /* Thumbnail.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
 		167DAFF9243D3E94006089E1 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,13 +205,11 @@
 		16CA5067243BD76100F3B99A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				16CA506B243BDDCD00F3B99A /* MarvelApiResponse.swift */,
+				167D32DB243EAD770083AEF6 /* Responses */,
 				169522E4243C2DC20015DB39 /* Result.swift */,
 				169522E6243C35EA0015DB39 /* Token.swift */,
 				167DB00C243D5E1D006089E1 /* CharacterModel.swift */,
 				167D32D5243E7E450083AEF6 /* ImageSize.swift */,
-				167D32D7243EA3950083AEF6 /* ComicResponse.swift */,
-				167D32D9243EA7C50083AEF6 /* Thumbnail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -336,7 +344,7 @@
 				167DB007243D57A2006089E1 /* MainCoordinator.swift in Sources */,
 				167DAFFE243D42C4006089E1 /* MainViewController.swift in Sources */,
 				16CA5044243BC20C00F3B99A /* AppDelegate.swift in Sources */,
-				16CA506C243BDDCD00F3B99A /* MarvelApiResponse.swift in Sources */,
+				16CA506C243BDDCD00F3B99A /* CharacterResponse.swift in Sources */,
 				167DB009243D58CE006089E1 /* Storyboarded.swift in Sources */,
 				167DB00D243D5E1D006089E1 /* CharacterModel.swift in Sources */,
 				169522DE243BF7F20015DB39 /* String+Hashing.swift in Sources */,

@@ -1,6 +1,6 @@
 import Foundation
 
-struct MarvelApiResponse: Codable {
+struct CharacterResponse: Codable {
     public var data: innerData
 }
 
