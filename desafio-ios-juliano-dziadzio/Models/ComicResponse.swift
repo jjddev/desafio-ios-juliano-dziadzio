@@ -1,15 +1,15 @@
 import Foundation
 
-struct ComicResponse {
+struct ComicResponse: Codable {
     var data: [InnerData]
     
-    struct InnerData {
+    struct InnerData: Codable {
         let results: [Comic]
         let total: Int
     }
 }
 
-struct Comic {
+struct Comic: Codable {
     let id: Int
     let title: String
     let description: String
@@ -18,7 +18,7 @@ struct Comic {
     
     let prices: [Price]
     
-    struct Price {
+    struct Price: Codable {
         let type: String
         let price: Decimal
     }
