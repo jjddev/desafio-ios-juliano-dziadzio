@@ -1,7 +1,6 @@
 import Foundation
 
 enum ImageSize: String {
-    
     case portraitSmall = "portrait_small"
     case portraitMedium = "portrait_medium"
     case portraitXlarge = "portrait_xlarge"
@@ -16,7 +15,6 @@ enum ImageSize: String {
     case standardFantastic = "standard_fantastic"
     case standardUncanny = "standard_uncanny"
     case standardIncredible = "standard_incredible"
-    
     
     case landscapeSmall = "landscape_small"
     case landscapeMedium = "landscape_medium"
