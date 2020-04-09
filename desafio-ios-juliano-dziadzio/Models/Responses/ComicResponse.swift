@@ -1,7 +1,7 @@
 import Foundation
 
 struct ComicResponse: Codable {
-    var data: [InnerData]
+    var data: InnerData
     
     struct InnerData: Codable {
         let results: [Comic]
