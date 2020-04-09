@@ -23,7 +23,7 @@ class CharactersDetailsViewController: UIViewController, Storyboarded {
     }
     
     private func comicDetails() {
-        coordinator?.showComicDetails()
+        coordinator?.showComicDetails(from: character?.id ?? -1)
     }
     
     @IBAction func didTapComicDetails(_ sender: Any) {

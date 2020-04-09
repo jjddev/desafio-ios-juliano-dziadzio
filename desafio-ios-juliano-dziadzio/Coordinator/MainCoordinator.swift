@@ -30,9 +30,10 @@ class MainCoordinator {
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    func showComicDetails() {
+    func showComicDetails(from characterId: Int) {
         let viewController =  ComicsDetailsViewController.instantiate()
         viewController.coordinator = self
+        viewController.characterId = characterId
         navigationController.pushViewController(viewController, animated: true)
     }
 }
