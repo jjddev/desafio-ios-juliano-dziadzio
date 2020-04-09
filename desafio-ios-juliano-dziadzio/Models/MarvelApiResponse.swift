@@ -21,17 +21,7 @@ struct Character: Codable {
         let description = self.description.isEmpty ? "No description avaliable" : self.description
         
         return CharacterModel(id: self.id, name: self.name, description: description, imagePath: path, imageBlob: imageBlob)
-    }
-    
+    }    
 }
 
-struct Thumbnail: Codable {
-    let path: String
-    let fileExtension: String
-    
-    enum CodingKeys: String, CodingKey {
-        case fileExtension = "extension"
-        case path
-    }
-}
 
