@@ -3,7 +3,7 @@ import Foundation
 enum ApiRoute {
     case characters
     case comics(Int)
-    case imageCharacter(String, String, String)
+    case image(String, String, String)
     
     
     var route: String {
@@ -12,7 +12,7 @@ enum ApiRoute {
             return AppSettings.ApiUrl + "characters"
         case .comics(let characterId):
             return AppSettings.ApiUrl + "characters/\(characterId)/comics"
-        case .imageCharacter(let path, let size, let fileExtension):
+        case .image(let path, let size, let fileExtension):
             return "\(path)/\(size).\(fileExtension)"
         }
     }
