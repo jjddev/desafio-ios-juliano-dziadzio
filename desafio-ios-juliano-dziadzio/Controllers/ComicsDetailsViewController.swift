@@ -3,11 +3,15 @@ import UIKit
 class ComicsDetailsViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
     var characterId: Int = -1
-    var comicResponse: ComicResponse?
+    var comicResponse: ComicResponse?  {
+        didSet {
+            populateScreenFields()
+        }
+    }
     
     var blobImage: Data = Data() {
         didSet {
-            populateScreenFields()
+            setImage()
         }
     }
     
@@ -32,15 +36,14 @@ class ComicsDetailsViewController: UIViewController, Storyboarded {
     }
     
     private func fetchComics() {
-        print(self.characterId)
-        Service().fetchComics(characterId: characterId, completionHandler: { response in
-            
+        //print(self.characterId)
+        Service().fetchData(endPoint: ApiRoute.comics(characterId), resultType: ComicResponse.self, completionHandler: { response in
             print(response)
             
             let comic = response.data.results[0]
             self.comicResponse = response
-            let url =  "\(comic.thumbnail.path)/\(ImageSize.portraitFantastic.rawValue).\(comic.thumbnail.fileExtension)"
-            Service().getImage(urlDownload: url)  { downloadImage in
+            let url = ApiRoute.image(comic.thumbnail.path, ImageSize.portraitFantastic.rawValue, comic.thumbnail.fileExtension)
+            Service().getImage(urlDownload: url.route)  { downloadImage in
                 self.blobImage = downloadImage
             }
         })
@@ -52,8 +55,14 @@ class ComicsDetailsViewController: UIViewController, Storyboarded {
                 self.comicTitle.text = comic.data.results[0].title
                 self.shortResume.text = comic.data.results[0].description
                 self.price.text = "Price: U$ \(comic.data.results[0].prices[0].price)"
-                self.cover.image = UIImage(data: self.blobImage)
             }
         }
     }
+    
+    private func setImage() {
+        DispatchQueue.main.async {
+           self.cover.image = UIImage(data: self.blobImage)
+        }
+    }
+    
 }
