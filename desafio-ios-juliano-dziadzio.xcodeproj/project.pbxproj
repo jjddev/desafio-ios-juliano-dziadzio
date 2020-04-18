@@ -24,6 +24,7 @@
 		169522E3243C2D8C0015DB39 /* URLSession+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169522E2243C2D8C0015DB39 /* URLSession+extension.swift */; };
 		169522E5243C2DC20015DB39 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169522E4243C2DC20015DB39 /* Result.swift */; };
 		169522E7243C35EA0015DB39 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169522E6243C35EA0015DB39 /* Token.swift */; };
+		16A7BC752446BD2E00741529 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 16A7BC742446BD2E00741529 /* readme.md */; };
 		16CA5044243BC20C00F3B99A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CA5043243BC20C00F3B99A /* AppDelegate.swift */; };
 		16CA5046243BC20C00F3B99A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CA5045243BC20C00F3B99A /* SceneDelegate.swift */; };
 		16CA504B243BC20C00F3B99A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16CA5049243BC20C00F3B99A /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		16CA505B243BC20D00F3B99A /* desafio_ios_juliano_dziadzioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CA505A243BC20D00F3B99A /* desafio_ios_juliano_dziadzioTests.swift */; };
 		16CA5069243BDC3A00F3B99A /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CA5068243BDC3A00F3B99A /* AppSettings.swift */; };
 		16CA506C243BDDCD00F3B99A /* CharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CA506B243BDDCD00F3B99A /* CharacterResponse.swift */; };
+		16CE630C244A6F4900B29BED /* ApiRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CE630B244A6F4900B29BED /* ApiRoute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,7 @@
 		169522E2243C2D8C0015DB39 /* URLSession+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+extension.swift"; sourceTree = "<group>"; };
 		169522E4243C2DC20015DB39 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		169522E6243C35EA0015DB39 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		16A7BC742446BD2E00741529 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		16CA5040243BC20C00F3B99A /* desafio-ios-juliano-dziadzio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-ios-juliano-dziadzio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16CA5043243BC20C00F3B99A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16CA5045243BC20C00F3B99A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 		16CA505C243BC20D00F3B99A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16CA5068243BDC3A00F3B99A /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		16CA506B243BDDCD00F3B99A /* CharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponse.swift; sourceTree = "<group>"; };
+		16CE630B244A6F4900B29BED /* ApiRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRoute.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 		16CA5037243BC20C00F3B99A = {
 			isa = PBXGroup;
 			children = (
+				16A7BC742446BD2E00741529 /* readme.md */,
 				16CA5042243BC20C00F3B99A /* desafio-ios-juliano-dziadzio */,
 				16CA5059243BC20D00F3B99A /* desafio-ios-juliano-dziadzioTests */,
 				16CA5041243BC20C00F3B99A /* Products */,
@@ -230,6 +235,7 @@
 		16CA506D243BDED300F3B99A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				16CE630B244A6F4900B29BED /* ApiRoute.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -326,6 +332,7 @@
 				16CA504D243BC20D00F3B99A /* Assets.xcassets in Resources */,
 				167D32DD243EB1FB0083AEF6 /* portrait_fantastic.jpg in Resources */,
 				16CA504B243BC20C00F3B99A /* Main.storyboard in Resources */,
+				16A7BC752446BD2E00741529 /* readme.md in Resources */,
 				167DB005243D4AD1006089E1 /* standard_medium.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +365,7 @@
 				16CA5069243BDC3A00F3B99A /* AppSettings.swift in Sources */,
 				16CA5046243BC20C00F3B99A /* SceneDelegate.swift in Sources */,
 				167DB00B243D5B6B006089E1 /* CharactersDetailsViewController.swift in Sources */,
+				16CE630C244A6F4900B29BED /* ApiRoute.swift in Sources */,
 				167DB00F243D72D5006089E1 /* ComicsDetailsViewController.swift in Sources */,
 				167D32D6243E7E450083AEF6 /* ImageSize.swift in Sources */,
 				167D32DA243EA7C50083AEF6 /* Thumbnail.swift in Sources */,

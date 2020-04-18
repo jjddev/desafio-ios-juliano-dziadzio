@@ -24,22 +24,20 @@ class MainViewController: UIViewController, Storyboarded {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if characters.isEmpty {
-            activityIndicator.startAnimating()
-            Service().fetchCharacters(completionHandler: { response in
-                //print(response.data.results)
-                self.characters = response.data.results
-                for item in self.characters {
-                    let url =  "\(item.thumbnail.path)/\(ImageSize.landscapeMedium.rawValue).\(item.thumbnail.fileExtension)"
-                    Service().getImage(urlDownload: url)  { downloadImage in
-                        let character = item.toModel(imageBlob: downloadImage)
-                        self.charactersModel.append(character)
-                    }
+        activityIndicator.startAnimating()
+        Service().fetchData(endPoint: ApiRoute.characters, resultType: CharacterResponse.self, completionHandler: { response in
+            print(response.data.results)
+            self.characters = response.data.results
+            for item in self.characters {
+                let url = ApiRoute.imageCharacter(item.thumbnail.path, ImageSize.landscapeMedium.rawValue, item.thumbnail.fileExtension)
+                Service().getImage(urlDownload: url.route) { downloadImage in
+                    let character = item.toModel(imageBlob: downloadImage)
+                    self.charactersModel.append(character)
                 }
+            }
                 
-                self.updateTableItems()
-            })
-        }
+            self.updateTableItems()
+        })
     }
     
     func updateTableItems() {
