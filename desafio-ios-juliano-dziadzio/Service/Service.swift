@@ -33,7 +33,7 @@ class Service {
     }
     
     func getImage(urlDownload: String, completionHander: @escaping (Data) -> Void) {
-        let url = URL(string: urlDownload)!
+        guard let url = URL(string: urlDownload) else { return }
         
         DispatchQueue.global().sync {
             guard let imageData = try? Data(contentsOf: url) else { return }
