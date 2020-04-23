@@ -15,6 +15,7 @@ class MainViewController: UIViewController, Storyboarded {
     let cellName = String(describing: CharacterTableViewCell.self)
     var characters = [Character]()
     var charactersModel = [CharacterModel]()
+    var pagination = Pagination()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,19 +27,7 @@ class MainViewController: UIViewController, Storyboarded {
     override func viewWillAppear(_ animated: Bool) {
         if characters.isEmpty {
             activityIndicator.startAnimating()
-            Service().fetchData(endPoint: ApiRoute.characters, resultType: CharacterResponse.self, completionHandler: { response in
-                print(response.data.results)
-                self.characters = response.data.results
-                for item in self.characters {
-                    let url = ApiRoute.image(item.thumbnail.path, ImageSize.landscapeMedium.rawValue, item.thumbnail.fileExtension)
-                    Service().getImage(urlDownload: url.route) { downloadImage in
-                        let character = item.toModel(imageBlob: downloadImage)
-                        self.charactersModel.append(character)
-                    }
-                }
-                    
-                self.updateTableItems()
-            })
+            fetchCharacters()
         }
     }
     
@@ -48,6 +37,29 @@ class MainViewController: UIViewController, Storyboarded {
             self.loadingView.isHidden = true
         }
     }
+    
+    func fetchCharacters() {
+        let limit = pagination.limit
+        let offset = pagination.offset
+        
+        Service().fetchData(endPoint: ApiRoute.characters(limit, offset), resultType: CharacterResponse.self, completionHandler: { response in
+            print(response.data.results)
+            self.pagination.offset = offset == 0 ? self.pagination.limit + 1 : self.pagination.offset + self.pagination.limit
+            self.pagination.total = response.data.total
+            
+            self.characters += response.data.results
+            for item in response.data.results {
+                let url = ApiRoute.image(item.thumbnail.path, ImageSize.landscapeMedium.rawValue, item.thumbnail.fileExtension)
+                Service().getImage(urlDownload: url.route) { downloadImage in
+                    let character = item.toModel(imageBlob: downloadImage)
+                    self.charactersModel.append(character)
+                }
+            }
+                
+            self.updateTableItems()
+        })
+    }
+    
 }
 
 
@@ -77,4 +89,11 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         let character = charactersModel[indexPath.row]
         coordinator?.showCharacterDetails(model: character)
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if charactersModel.count-1 == indexPath.row && charactersModel.count-1 != pagination.total {
+            fetchCharacters()
+        }
+    }
+    
 }
