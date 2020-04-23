@@ -3,18 +3,12 @@ import UIKit
 
 class Service {
     
-    private func generateToken() -> Token {
-        let timestamp = String(Date().timeIntervalSince1970)
-        let token = "\(timestamp)\(AppSettings.ApiPrivateKey)\(AppSettings.ApiPublicKey)".insecureMD5Hash() ?? ""
-        
-        return Token(value: token, timestamp: timestamp)
-    }
+
     
     func fetchData<T: Codable>(endPoint: ApiRoute, resultType: T.Type, completionHandler: @escaping (_  result: T) -> Void) {
-        let token = generateToken()
-        let urls = endPoint.route + "?ts=\(token.timestamp)&apikey=\(AppSettings.ApiPublicKey)&hash=\(token.value)&limit=15&offset=0"
-        
-        guard let url = URL(string: urls) else { return }
+
+       
+        guard let url = URL(string: endPoint.route) else { return }
     
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
