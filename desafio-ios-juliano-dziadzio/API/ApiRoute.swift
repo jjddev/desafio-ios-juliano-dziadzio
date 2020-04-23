@@ -9,12 +9,13 @@ enum ApiRoute {
     var route: String {
         
         let token = generateToken()
+        let authentication = "?ts=\(token.timestamp)&apikey=\(AppSettings.ApiPublicKey)&hash=\(token.value)"
         
         switch self {
         case .characters(let limit, let offset):
-            return AppSettings.ApiUrl + "characters" + "?ts=\(token.timestamp)&apikey=\(AppSettings.ApiPublicKey)&hash=\(token.value)&limit=\(limit)&offset=\(offset)"
+            return AppSettings.ApiUrl + "characters" + authentication + "&limit=\(limit)&offset=\(offset)"
         case .comics(let characterId):
-            return AppSettings.ApiUrl + "characters/\(characterId)/comics"
+            return AppSettings.ApiUrl + "characters/\(characterId)/comics" + authentication
         case .image(let path, let size, let fileExtension):
             return "\(path)/\(size).\(fileExtension)"
         }
