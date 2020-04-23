@@ -3,11 +3,8 @@ import UIKit
 
 class Service {
     
-
-    
     func fetchData<T: Codable>(endPoint: ApiRoute, resultType: T.Type, completionHandler: @escaping (_  result: T) -> Void) {
-
-       
+        
         guard let url = URL(string: endPoint.route) else { return }
     
         var request = URLRequest(url: url)
@@ -40,7 +37,3 @@ class Service {
     }
     
 }
-
-
-
-
