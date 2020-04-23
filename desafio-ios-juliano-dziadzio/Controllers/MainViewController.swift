@@ -92,7 +92,22 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if charactersModel.count-1 == indexPath.row && charactersModel.count-1 != pagination.total {
+            setupSpinner(tableView: tableView, showLoading: true)
             fetchCharacters()
+        } else {
+            tableView.tableFooterView?.isHidden = true
+        }
+    }
+    
+    private func setupSpinner(tableView: UITableView, showLoading: Bool) {
+        if showLoading {
+            let spinner = UIActivityIndicatorView()
+            spinner.startAnimating()
+            spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: 44)
+            tableView.tableFooterView = spinner
+            tableView.tableFooterView?.isHidden = false
+        } else {
+            tableView.tableFooterView?.isHidden = true
         }
     }
     
