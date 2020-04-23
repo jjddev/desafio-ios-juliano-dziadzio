@@ -16,6 +16,8 @@ class Service {
         let task = URLSession.shared.dataTask(with: url) { result in
             switch result {
                 case .success(let data):
+                    //print("Decode to: \(T.self)")
+                    //print(String(data: data, encoding: .utf8))
                     let json = try! JSONDecoder().decode(T.self, from: data)
                     completionHandler(json)
                 case .failure(let error):

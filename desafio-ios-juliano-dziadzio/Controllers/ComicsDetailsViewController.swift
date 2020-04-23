@@ -26,7 +26,7 @@ class ComicsDetailsViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Comic .... "
+        self.navigationItem.title = "Most expensive comic"
         fetchComics()
         
     }
