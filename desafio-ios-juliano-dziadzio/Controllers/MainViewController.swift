@@ -106,6 +106,11 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: 44)
             tableView.tableFooterView = spinner
             tableView.tableFooterView?.isHidden = false
+            UIView.animate(withDuration: 1.0, delay: 0.2, options: .repeat, animations:  {
+                tableView.tableFooterView?.alpha = 0.4
+                spinner.alpha = 1
+                tableView.tableFooterView?.backgroundColor = #colorLiteral(red: 0.9518690303, green: 0.986374557, blue: 0.7017412422, alpha: 1)
+            })
         } else {
             tableView.tableFooterView?.isHidden = true
         }
