@@ -103,7 +103,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         if showLoading {
             let spinner = UIActivityIndicatorView()
             spinner.startAnimating()
-            spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: 44)
+            spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: 66)
             tableView.tableFooterView = spinner
             tableView.tableFooterView?.isHidden = false
             UIView.animate(withDuration: 1.0, delay: 0.4, options: .repeat, animations:  {
