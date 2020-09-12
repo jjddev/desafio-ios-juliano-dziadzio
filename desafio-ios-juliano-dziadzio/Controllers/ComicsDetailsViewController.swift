@@ -21,8 +21,7 @@ class ComicsDetailsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var cover: UIImageView!
     @IBOutlet weak var comicTitle: UILabel!
     @IBOutlet weak var price: UILabel!
-    @IBOutlet weak var shortResume: UILabel!
-    
+    @IBOutlet weak var shortResume: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

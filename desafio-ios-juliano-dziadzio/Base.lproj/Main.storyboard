@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -194,27 +194,29 @@
                                 <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripton comic" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAO-Wf-t2F">
-                                <rect key="frame" x="12" y="375" width="351" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Comic Description ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UkV-CE-Xfe" userLabel="Short Resume">
+                                <rect key="frame" x="12" y="375" width="351" height="287"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="WAO-Wf-t2F" firstAttribute="top" secondItem="rQQ-iR-b6B" secondAttribute="bottom" constant="17" id="0dL-8d-ZCD"/>
                             <constraint firstItem="Uir-qq-Hcf" firstAttribute="trailing" secondItem="5do-A3-NnC" secondAttribute="trailing" constant="12" id="5G5-tb-Um7"/>
                             <constraint firstItem="5do-A3-NnC" firstAttribute="top" secondItem="dbr-5J-O4l" secondAttribute="bottom" constant="17" id="7eA-K4-Syc"/>
-                            <constraint firstItem="Uir-qq-Hcf" firstAttribute="trailing" secondItem="WAO-Wf-t2F" secondAttribute="trailing" constant="12" id="86C-p5-7Wa"/>
                             <constraint firstItem="dbr-5J-O4l" firstAttribute="top" secondItem="Uir-qq-Hcf" secondAttribute="top" constant="10" id="EtB-oc-Ehw"/>
-                            <constraint firstItem="WAO-Wf-t2F" firstAttribute="leading" secondItem="Uir-qq-Hcf" secondAttribute="leading" constant="12" id="EtJ-0w-ujk"/>
+                            <constraint firstItem="Uir-qq-Hcf" firstAttribute="trailing" secondItem="UkV-CE-Xfe" secondAttribute="trailing" constant="12" id="FlE-fQ-vnG"/>
                             <constraint firstItem="Uir-qq-Hcf" firstAttribute="trailing" secondItem="rQQ-iR-b6B" secondAttribute="trailing" constant="12" id="OOA-fi-d6e"/>
                             <constraint firstItem="5do-A3-NnC" firstAttribute="leading" secondItem="Uir-qq-Hcf" secondAttribute="leading" constant="12" id="VgZ-wc-KVO"/>
                             <constraint firstItem="rQQ-iR-b6B" firstAttribute="leading" secondItem="Uir-qq-Hcf" secondAttribute="leading" constant="12" id="Vh5-2D-TBf"/>
+                            <constraint firstItem="UkV-CE-Xfe" firstAttribute="top" secondItem="rQQ-iR-b6B" secondAttribute="bottom" constant="17" id="cal-9E-pkL"/>
                             <constraint firstItem="rQQ-iR-b6B" firstAttribute="top" secondItem="5do-A3-NnC" secondAttribute="bottom" constant="28" id="cy1-EX-Bm7"/>
                             <constraint firstItem="dbr-5J-O4l" firstAttribute="centerX" secondItem="8W1-UL-fLr" secondAttribute="centerX" id="gUK-Va-QbP"/>
+                            <constraint firstItem="UkV-CE-Xfe" firstAttribute="leading" secondItem="Uir-qq-Hcf" secondAttribute="leading" constant="12" id="oas-wX-UyY"/>
                             <constraint firstItem="5do-A3-NnC" firstAttribute="centerX" secondItem="8W1-UL-fLr" secondAttribute="centerX" id="rin-Ha-9PT"/>
+                            <constraint firstItem="Uir-qq-Hcf" firstAttribute="bottom" secondItem="UkV-CE-Xfe" secondAttribute="bottom" constant="5" id="tMg-g6-m0L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Uir-qq-Hcf"/>
                     </view>
@@ -222,7 +224,7 @@
                         <outlet property="comicTitle" destination="5do-A3-NnC" id="aKT-EW-FYB"/>
                         <outlet property="cover" destination="dbr-5J-O4l" id="0fa-mu-zmH"/>
                         <outlet property="price" destination="rQQ-iR-b6B" id="f45-0e-gQ1"/>
-                        <outlet property="shortResume" destination="WAO-Wf-t2F" id="C61-5z-CZt"/>
+                        <outlet property="shortResume" destination="UkV-CE-Xfe" id="qL3-pJ-4Wk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omi-Pk-FJQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

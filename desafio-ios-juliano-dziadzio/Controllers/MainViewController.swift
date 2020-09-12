@@ -43,7 +43,7 @@ class MainViewController: UIViewController, Storyboarded {
         let offset = pagination.offset
         
         Service().fetchData(endPoint: ApiRoute.characters(limit, offset), resultType: CharacterResponse.self, completionHandler: { response in
-            print(response.data.results)
+            //print(response.data.results)
             self.pagination.offset = offset == 0 ? self.pagination.limit + 1 : self.pagination.offset + self.pagination.limit
             self.pagination.total = response.data.total
             

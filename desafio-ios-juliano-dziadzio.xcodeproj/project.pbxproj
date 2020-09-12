@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		161FD5EB24C7C7D5003D9E63 /* CharactersListValidMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 161FD5EA24C7C7D5003D9E63 /* CharactersListValidMock.json */; };
+		1676BCCC25006BBE009CD7F3 /* MainCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676BCCB25006BBE009CD7F3 /* MainCoordinatorTest.swift */; };
 		167D32D6243E7E450083AEF6 /* ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167D32D5243E7E450083AEF6 /* ImageSize.swift */; };
 		167D32D8243EA3950083AEF6 /* ComicResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167D32D7243EA3950083AEF6 /* ComicResponse.swift */; };
 		167D32DA243EA7C50083AEF6 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167D32D9243EA7C50083AEF6 /* Thumbnail.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		161FD5EA24C7C7D5003D9E63 /* CharactersListValidMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CharactersListValidMock.json; sourceTree = "<group>"; };
+		1676BCCB25006BBE009CD7F3 /* MainCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorTest.swift; sourceTree = "<group>"; };
 		167D32D5243E7E450083AEF6 /* ImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSize.swift; sourceTree = "<group>"; };
 		167D32D7243EA3950083AEF6 /* ComicResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicResponse.swift; sourceTree = "<group>"; };
 		167D32D9243EA7C50083AEF6 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
@@ -100,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		161FD5E924C7C3C9003D9E63 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				161FD5EA24C7C7D5003D9E63 /* CharactersListValidMock.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		167D32DB243EAD770083AEF6 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,8 +202,10 @@
 		16CA5059243BC20D00F3B99A /* desafio-ios-juliano-dziadzioTests */ = {
 			isa = PBXGroup;
 			children = (
+				161FD5E924C7C3C9003D9E63 /* Resources */,
 				16CA505A243BC20D00F3B99A /* desafio_ios_juliano_dziadzioTests.swift */,
 				16CA505C243BC20D00F3B99A /* Info.plist */,
+				1676BCCB25006BBE009CD7F3 /* MainCoordinatorTest.swift */,
 			);
 			path = "desafio-ios-juliano-dziadzioTests";
 			sourceTree = "<group>";
@@ -344,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				161FD5EB24C7C7D5003D9E63 /* CharactersListValidMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16CA505B243BC20D00F3B99A /* desafio_ios_juliano_dziadzioTests.swift in Sources */,
+				1676BCCC25006BBE009CD7F3 /* MainCoordinatorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
