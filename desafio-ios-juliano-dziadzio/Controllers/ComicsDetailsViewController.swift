@@ -3,6 +3,7 @@ import UIKit
 class ComicsDetailsViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
     var characterId: Int = -1
+    let service: ServiceProtocol = NativeService.shared
     var comicResponse: ComicResponse?  {
         didSet {
             populateScreenFields()
@@ -36,13 +37,13 @@ class ComicsDetailsViewController: UIViewController, Storyboarded {
     
     private func fetchComics() {
         //print(self.characterId)
-        Service().fetchData(endPoint: ApiRoute.comics(characterId), resultType: ComicResponse.self, completionHandler: { response in
+        service.fetchData(endPoint: ApiRoute.comics(characterId), resultType: ComicResponse.self, completionHandler: { response in
             print(response)
             
             let comic = response.data.results[0]
             self.comicResponse = response
             let url = ApiRoute.image(comic.thumbnail.path, ImageSize.portraitFantastic.rawValue, comic.thumbnail.fileExtension)
-            Service().getImage(urlDownload: url.route)  { downloadImage in
+            self.service.getImage(urlDownload: url.route)  { downloadImage in
                 self.blobImage = downloadImage
             }
         })

@@ -1,0 +1,6 @@
+framework module Pods_desafio_ios_juliano_dziadzioTests {
+  umbrella header "Pods-desafio-ios-juliano-dziadzioTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -16,6 +16,7 @@ class MainViewController: UIViewController, Storyboarded {
     var characters = [Character]()
     var charactersModel = [CharacterModel]()
     var pagination = Pagination()
+    let service: ServiceProtocol = NativeService.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,7 @@ class MainViewController: UIViewController, Storyboarded {
         let limit = pagination.limit
         let offset = pagination.offset
         
-        Service().fetchData(endPoint: ApiRoute.characters(limit, offset), resultType: CharacterResponse.self, completionHandler: { response in
+        service.fetchData(endPoint: ApiRoute.characters(limit, offset), resultType: CharacterResponse.self, completionHandler: { response in
             //print(response.data.results)
             self.pagination.offset = offset == 0 ? self.pagination.limit + 1 : self.pagination.offset + self.pagination.limit
             self.pagination.total = response.data.total
@@ -50,7 +51,7 @@ class MainViewController: UIViewController, Storyboarded {
             self.characters += response.data.results
             for item in response.data.results {
                 let url = ApiRoute.image(item.thumbnail.path, ImageSize.landscapeMedium.rawValue, item.thumbnail.fileExtension)
-                Service().getImage(urlDownload: url.route) { downloadImage in
+                self.service.getImage(urlDownload: url.route) { downloadImage in
                     let character = item.toModel(imageBlob: downloadImage)
                     self.charactersModel.append(character)
                 }

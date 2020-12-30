@@ -1,7 +1,11 @@
 import Foundation
 import UIKit
 
-class Service {
+class NativeService: ServiceProtocol {
+    
+    private init() { }
+    
+    static let shared = NativeService()
     
     func fetchData<T: Codable>(endPoint: ApiRoute, resultType: T.Type, completionHandler: @escaping (_  result: T) -> Void) {
         
